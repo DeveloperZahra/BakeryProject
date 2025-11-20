@@ -1,8 +1,66 @@
+/* Reset default browser styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* Default font */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+/* ========================= */
+/* NAVBAR                    */
+/* ========================= */
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 60px;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: burlywood; /* golden beige tone */
+}
+
+
+/* ========================= */
+/* HERO SECTION              */
+/* ========================= */
 
 .parent {
     overflow: hidden;
@@ -13,62 +71,168 @@
     width: 100%;
     height: 100vh;
     position: relative;
+
+     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .layer {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4); /* overlay must stay rgba */
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     top: 0;
-
-}
-
-.about {
-    background-color: teal;
-    color: white;
+     z-index: 1;
 
 }
 
 .caption {
-    width: 50%;
+    width: 60%;
     color: white;
     text-align: center;
-    margin: 200px auto;
-
+    position: relative;
+    z-index: 2;
 }
 
 
+.caption .small-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.caption h1 {
+    font-size: 60px;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 550px;
+    margin: 0 auto 30px auto;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primary-custom {
+    padding: 12px 28px;
+    background-color: saddleBrown;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary-custom {
+    padding: 12px 28px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: peru;
+}
+
+.btn-secondary-custom:hover {
+    background-color: white;
+    color: black;
+}
+
+/* ========================= */
+/* ABOUT SECTION             */
+/* ========================= */
+
+.about {
+    background-color: teal;
+    color: white;
+     padding: 60px 0;
+    text-align: center;
+
+}
+
+/* ========================= */
+/* RIGHT SIDE PANEL          */
+/* ========================= */
+
+
+
 .panel {
-    background-color: antiquewhite;
+     background-color: beige;
     border-top-left-radius: 10%;
     border-bottom-left-radius: 10%;
     padding: 5px;
     margin: 100px auto;
     width: 40px;
     height: 85px;
-    position: absolute;
+    position: fixed;
     z-index: 99;
     right: 0;
+    top: 40%;
 
 
 }
 
 .panel img {
 
-    padding: 6px;
-    right: 0;
-    top: 40%;
+     padding: 6px;
     width: 35px;
     height: 35px;
-
-
 }
 
+
 .panel img:hover {
-    background-color: rgb(147, 125, 2);
+    background-color: goldenrod;
     border-radius: 10%;
+}
 
 
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+
+
+@media (max-width: 768px) {
+
+    .main-nav {
+        padding: 15px 20px;
+    }
+
+    .caption {
+        width: 90%;
+    }
+
+    .caption h1 {
+        font-size: 38px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        width: 100%;
+        max-width: 220px;
+    }
 }
